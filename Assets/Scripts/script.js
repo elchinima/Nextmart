@@ -10,17 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const items = Array.from(navRef.querySelectorAll("li"));
 
-    // Options
     const animationTime = 600;
     const particleCount = 15;
     const particleDistances = [90, 10];
     const particleR = 100;
     const timeVariance = 300;
     const colors = [1, 2, 3, 4, 1, 2, 3, 4];
-    
+
     let activeIndex = 0;
 
-    // Set initial active state based on DOM
     items.forEach((item, index) => {
         if (item.classList.contains("active")) {
             activeIndex = index;
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 const particle = document.createElement('span');
                 const point = document.createElement('span');
-                
+
                 particle.classList.add('particle');
                 particle.style.setProperty('--start-x', `${p.start[0]}px`);
                 particle.style.setProperty('--start-y', `${p.start[1]}px`);
@@ -74,16 +72,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 point.classList.add('point');
                 particle.appendChild(point);
                 element.appendChild(particle);
-                
+
                 requestAnimationFrame(() => {
                     element.classList.add('active');
                 });
-                
+
                 setTimeout(() => {
                     try {
                         element.removeChild(particle);
                     } catch {
-                        // Ignore
                     }
                 }, t);
             }, 30);
@@ -119,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
         particles.forEach(p => p.remove());
 
         textRef.classList.remove('active');
-        // trigger reflow
         void textRef.offsetWidth;
         textRef.classList.add('active');
 
@@ -140,14 +136,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Initial setup
     const activeLi = items[activeIndex];
     if (activeLi) {
         updateEffectPosition(activeLi);
         textRef.classList.add('active');
     }
 
-    // Update positions on resize
     const resizeObserver = new ResizeObserver(() => {
         const currentActiveLi = items[activeIndex];
         if (currentActiveLi) {

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexmart</title>
     <link rel="icon" type="image/png" href="./Assets/Image/fav_icon2.png">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
-    <link rel="stylesheet" href="./Assets/CSS/pixel-snow.css">
-    <link rel="stylesheet" href="./Assets/CSS/border-glow.css">
+    <link rel="stylesheet" href="./Assets/CSS/media.css">
     <script defer src="./Assets/Scripts/script.js"></script>
+    <script defer src="./Assets/Scripts/user.js"></script>
     <script defer src="./Assets/Scripts/split-text.js"></script>
     <script type="module" defer src="./Assets/Scripts/pixel-snow.js"></script>
     <script defer src="./Assets/Scripts/click-spark.js"></script>
     <script defer src="./Assets/Scripts/border-glow.js"></script>
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
@@ -21,9 +23,9 @@
             <div class="gooey-nav-container" data-gooey-nav>
                 <nav aria-label="Main navigation">
                     <ul>
-                        <li><a href="#">Login</a></li>
+                        <li><a id="login-btn" href="#">Login</a></li>
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Product</a></li>              
+                        <li><a href="#">Product</a></li>
                         <li><a href="#">Gallery</a></li>
                     </ul>
                 </nav>
@@ -65,11 +67,34 @@
         </section>
     </main>
 
+    <div class="login-wrapper" id="login-wrapper">
+        <div class="neumorphic-login">
+            <button class="close-btn" id="close-btn" aria-label="Close login form">✕</button>
+            <h2 class="title">Login Form</h2>
+
+            <form action="#">
+                <div class="input-group">
+                    <span class="icon">👤</span>
+                    <input type="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-group">
+                    <span class="icon">🔒</span>
+                    <input type="password" placeholder="Password" minlength="8" required>
+                </div>
+
+                <a href="#" class="forgot-link">Forgot Password?</a>
+
+                <button type="submit" class="sign-in-btn">Sign in</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Nexmart. All rights reserved.</p>
         </div>
     </footer>
 </body>
-</html>
 
+</html>

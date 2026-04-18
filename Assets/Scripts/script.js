@@ -156,4 +156,104 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     resizeObserver.observe(container);
+
+    const featuresGrid = document.querySelector(".features .grid");
+    if (!featuresGrid) return;
+
+    const featureCards = Array.from(featuresGrid.querySelectorAll(".card"));
+    if (featureCards.length <= 1) return;
+
+    const indicatorsWrap = document.createElement("div");
+    indicatorsWrap.className = "features-carousel-indicators";
+    indicatorsWrap.setAttribute("aria-label", "Feature cards pagination");
+
+    const indicatorButtons = featureCards.map((_, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", `Go to card ${index + 1}`);
+        btn.addEventListener("click", () => {
+            const step = getStep();
+            featuresGrid.scrollTo({
+                left: step * index,
+                behavior: "smooth"
+            });
+        });
+        indicatorsWrap.appendChild(btn);
+        return btn;
+    });
+
+    const featuresSection = document.querySelector(".features");
+    if (featuresSection) {
+        featuresSection.appendChild(indicatorsWrap);
+    }
+
+    let currentCard = 0;
+    let autoplayTimer = null;
+    let isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const getStep = () => {
+        const styles = window.getComputedStyle(featuresGrid);
+        const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
+        return featureCards[0].offsetWidth + gap;
+    };
+
+    const setActiveIndicator = (index) => {
+        indicatorButtons.forEach((btn, btnIndex) => {
+            btn.classList.toggle("is-active", btnIndex === index);
+        });
+    };
+
+    const getCurrentCardByScroll = () => {
+        const step = getStep();
+        const index = Math.round(featuresGrid.scrollLeft / step);
+        return Math.max(0, Math.min(index, featureCards.length - 1));
+    };
+
+    const startAutoplay = () => {
+        if (!isMobile) return;
+        if (autoplayTimer) clearInterval(autoplayTimer);
+        autoplayTimer = window.setInterval(() => {
+            const step = getStep();
+            currentCard = (currentCard + 1) % featureCards.length;
+            featuresGrid.scrollTo({
+                left: step * currentCard,
+                behavior: "smooth"
+            });
+            setActiveIndicator(currentCard);
+        }, 3000);
+    };
+
+    const stopAutoplay = () => {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    };
+
+    featuresGrid.addEventListener("scroll", () => {
+        if (!isMobile) return;
+        currentCard = getCurrentCardByScroll();
+        setActiveIndicator(currentCard);
+    });
+
+    featuresGrid.addEventListener("touchstart", stopAutoplay, { passive: true });
+    featuresGrid.addEventListener("touchend", startAutoplay, { passive: true });
+    featuresGrid.addEventListener("mouseenter", stopAutoplay);
+    featuresGrid.addEventListener("mouseleave", startAutoplay);
+
+    const syncMode = () => {
+        isMobile = window.matchMedia("(max-width: 768px)").matches;
+        if (isMobile) {
+            currentCard = getCurrentCardByScroll();
+            setActiveIndicator(currentCard);
+            startAutoplay();
+        } else {
+            stopAutoplay();
+            setActiveIndicator(0);
+        }
+    };
+
+    window.addEventListener("resize", syncMode);
+    setActiveIndicator(0);
+    syncMode();
 });
+

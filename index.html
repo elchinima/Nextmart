@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexmart</title>
+    <link rel="icon" type="image/png" href="./Assets/Image/fav_icon2.png">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="stylesheet" href="./Assets/CSS/pixel-snow.css">
+    <link rel="stylesheet" href="./Assets/CSS/border-glow.css">
     <script defer src="./Assets/Scripts/script.js"></script>
+    <script defer src="./Assets/Scripts/split-text.js"></script>
+    <script type="module" defer src="./Assets/Scripts/pixel-snow.js"></script>
+    <script defer src="./Assets/Scripts/click-spark.js"></script>
+    <script defer src="./Assets/Scripts/border-glow.js"></script>
 </head>
 <body>
     <header class="site-header">
@@ -14,10 +21,10 @@
             <div class="gooey-nav-container" data-gooey-nav>
                 <nav aria-label="Main navigation">
                     <ul>
+                        <li><a href="#">Login</a></li>
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Catalog</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Product</a></li>              
+                        <li><a href="#">Gallery</a></li>
                     </ul>
                 </nav>
                 <span class="effect filter" aria-hidden="true"></span>
@@ -28,9 +35,10 @@
 
     <main>
         <section class="hero">
+            <div class="pixel-snow-container" data-pixel-snow aria-hidden="true"></div>
             <div class="container">
                 <p class="label">Simple shopping platform</p>
-                <h1>Everything you need in one clean place.</h1>
+                <h1 data-split-text>Everything you need in one clean place.</h1>
                 <p class="subtitle">
                     Nexmart helps you discover products quickly with a clear,
                     focused, and minimal experience.

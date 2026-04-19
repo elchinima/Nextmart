@@ -189,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentCard = 0;
     let autoplayTimer = null;
     let isMobile = window.matchMedia("(max-width: 768px)").matches;
+
     const getStep = () => {
         const styles = window.getComputedStyle(featuresGrid);
         const gap = parseFloat(styles.columnGap || styles.gap || "0") || 0;
@@ -254,5 +255,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", syncMode);
     setActiveIndicator(0);
     syncMode();
-});
 
+    new LogoLoop('#logo-loop', {
+        logos: [
+            { src: './Assets/Data/Company icon/Capcom.png', alt: 'Capcom' },
+            { src: './Assets/Data/Company icon/IOI-Interactive.png', alt: 'IOI Interactive' },
+            { src: './Assets/Data/Company icon/Mojang.png', alt: 'Mojang Studios' },
+            { src: './Assets/Data/Company icon/Mundfish.png', alt: 'Mundfish', scale: 2},
+            { src: './Assets/Data/Company icon/Rockstar.png', alt: 'Rockstar Games' },
+            { src: './Assets/Data/Company icon/Ubisoft.png', alt: 'Ubisoft' },
+        ],
+        speed: 60,
+        logoHeight: 50,
+        gap: 100,
+        pauseOnHover: true,
+        fadeOut: true,
+    });
+
+});

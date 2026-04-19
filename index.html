@@ -7,7 +7,8 @@
     <title>Nexmart</title>
     <link rel="icon" type="image/png" href="./Assets/Image/fav_icon2.png">
     <link rel="stylesheet" href="./Assets/CSS/style.css">
-    <link rel="stylesheet" href="./Assets/CSS/media.css">
+    <link rel="stylesheet" href="./Assets/CSS/responsive.css">
+    <script defer src="./Assets/Scripts/logo-loop.js"></script>
     <script defer src="./Assets/Scripts/script.js"></script>
     <script defer src="./Assets/Scripts/user.js"></script>
     <script defer src="./Assets/Scripts/split-text.js"></script>
@@ -26,8 +27,8 @@
                     <ul>
                         <li><a id="login-btn" href="#">Login</a></li>
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#products-section">Product</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
                 <span class="effect filter" aria-hidden="true"></span>
@@ -43,10 +44,10 @@
                 <p class="label">Simple shopping platform</p>
                 <h1 data-split-text>Everything you need in one clean place.</h1>
                 <p class="subtitle">
-                    Nexmart helps you discover products quickly with a clear,
-                    focused, and minimal experience.
+                    Nexmart gives you the opportunity to enjoy yourself without overpaying.
+                    Try it, you willl love it.
                 </p>
-                <a class="btn" href="#">Start exploring</a>
+                <a class="btn" href="#products-section">Start now</a>
             </div>
         </section>
 
@@ -91,119 +92,122 @@
         </div>
     </div>
 
-    <section class="products-section">
-            <div class="container grid">
+    <section id="products-section" class="products-section">
+        <div class="container grid">
 
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/AtomicHeart.png" alt="Atomic Heart">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Atomic Heart</span>
-                            <span class="product-card__price">$39.99</span>
-                        </div>
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/AtomicHeart.png" alt="Atomic Heart">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Atomic Heart</span>
+                        <span class="product-card__price">$39.99</span>
                     </div>
                 </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/FarCry6.png" alt="Far Cry 6">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Far Cry 6</span>
-                            <span class="product-card__price">$29.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/GTA5.png" alt="GTA 5">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Grand Theft Auto V</span>
-                            <span class="product-card__price">$19.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/Hitman3.png" alt="Hitman 3">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Hitman 3</span>
-                            <span class="product-card__price">$24.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/Minecraft.png" alt="Minecraft">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Minecraft</span>
-                            <span class="product-card__price">$26.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/RE4.png" alt="Resident Evil 4">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Resident Evil 4</span>
-                            <span class="product-card__price">$34.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/RE8.png" alt="Resident Evil Village">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Resident Evil Village</span>
-                            <span class="product-card__price">$29.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/RE9.png" alt="Resident Evil 9">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Resident Evil 9</span>
-                            <span class="product-card__price">$49.99</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-card__inner">
-                        <div class="product-card__img-wrap">
-                            <img src="./Assets/Data/Products image/WatchDogs Legion.png" alt="Watch Dogs Legion">
-                        </div>
-                        <div class="product-card__info">
-                            <span class="product-card__name">Watch Dogs Legion</span>
-                            <span class="product-card__price">$19.99</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/FarCry6.png" alt="Far Cry 6">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Far Cry 6</span>
+                        <span class="product-card__price">$29.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/GTA5.png" alt="GTA 5">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Grand Theft Auto V</span>
+                        <span class="product-card__price">$19.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/Hitman3.png" alt="Hitman 3">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Hitman 3</span>
+                        <span class="product-card__price">$24.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/Minecraft.png" alt="Minecraft">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Minecraft</span>
+                        <span class="product-card__price">$26.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/WatchDogs Legion.png" alt="Watch Dogs Legion">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Watch Dogs Legion</span>
+                        <span class="product-card__price">$19.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/RE4.png" alt="Resident Evil 4">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Resident Evil 4: Remake</span>
+                        <span class="product-card__price">$34.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/RE8.png" alt="Resident Evil Village">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Resident Evil 8: Village</span>
+                        <span class="product-card__price">$29.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-card__inner">
+                    <div class="product-card__img-wrap">
+                        <img src="./Assets/Data/Products image/RE9.png" alt="Resident Evil 9">
+                    </div>
+                    <div class="product-card__info">
+                        <span class="product-card__name">Resident Evil 9: Requiem</span>
+                        <span class="product-card__price">$49.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <div id="logo-loop"></div>
+    </section>
 
     <footer class="site-footer">
         <div class="container">

@@ -6,10 +6,12 @@ const neumorphicLogin = document.querySelector('.neumorphic-login');
 function openLoginModal() {
     loginWrapper.style.display = 'flex';
     loginWrapper.classList.add('open');
+    document.body.classList.add('scroll-locked');
 }
 
 function closeLoginModal() {
     loginWrapper.classList.remove('open');
+    document.body.classList.remove('scroll-locked');
     setTimeout(() => {
         loginWrapper.style.display = 'none';
     }, 300);

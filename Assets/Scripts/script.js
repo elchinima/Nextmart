@@ -120,6 +120,11 @@ document.addEventListener("DOMContentLoaded", () => {
         textRef.classList.add('active');
 
         makeParticles(filterRef);
+
+        const bubbleTime = animationTime * 2 + timeVariance;
+        setTimeout(() => {
+            filterRef.classList.remove('active');
+        }, bubbleTime + 100);
     };
 
     items.forEach((item, index) => {

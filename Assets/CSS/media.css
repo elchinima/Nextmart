@@ -160,7 +160,6 @@
     }
 }
 
-
 @media (max-width: 768px) {
     body {
         padding-top: 110px;
@@ -263,5 +262,9 @@
 
     .subtitle {
         font-size: .8em;
+    }
+
+    .neumorphic-login {
+        width: 300px !important;
     }
 }

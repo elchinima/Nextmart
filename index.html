@@ -16,6 +16,7 @@
     <script defer src="./Assets/Scripts/click-spark.js"></script>
     <script defer src="./Assets/Scripts/border-glow.js"></script>
     <script defer src="./Assets/Scripts/tilted-card.js"></script>
+    <script defer src="./Assets/Scripts/footer-dot-grid.js"></script>
 </head>
 
 <body>
@@ -93,6 +94,7 @@
     </div>
 
     <section id="products-section" class="products-section">
+        <h2 class="section-hero-1">Products</h2>
         <div class="container grid">
 
             <div class="product-card">
@@ -206,11 +208,30 @@
     </section>
 
     <section class="partners-section">
+        <h2 class="section-hero-2">Partners</h2>
         <div id="logo-loop"></div>
     </section>
 
     <footer class="site-footer">
-        <div class="container">
+        <canvas id="footer-dot-grid"></canvas>
+        <div class="container site-footer__content">
+            <div class="site-footer__brand">
+                <a class="logo" href="#">Nexmart</a>
+                <p>Simple shopping platform for everyone.</p>
+            </div>
+            <div class="site-footer__links">
+                <span class="site-footer__heading">Navigation</span>
+                <a href="#">Home</a>
+                <a href="#products-section">Products</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="site-footer__links">
+                <span class="site-footer__heading">Legal</span>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+        </div>
+        <div class="site-footer__bottom">
             <p>&copy; 2026 Nexmart. All rights reserved.</p>
         </div>
     </footer>

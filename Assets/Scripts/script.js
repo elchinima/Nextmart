@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { src: './Assets/Data/Company icon/Capcom.png', alt: 'Capcom' },
             { src: './Assets/Data/Company icon/IOI-Interactive.png', alt: 'IOI Interactive' },
             { src: './Assets/Data/Company icon/Mojang.png', alt: 'Mojang Studios' },
-            { src: './Assets/Data/Company icon/Mundfish.png', alt: 'Mundfish', scale: 2},
+            { src: './Assets/Data/Company icon/Mundfish.png', alt: 'Mundfish', scale: 2 },
             { src: './Assets/Data/Company icon/Rockstar.png', alt: 'Rockstar Games' },
             { src: './Assets/Data/Company icon/Ubisoft.png', alt: 'Ubisoft' },
         ],

@@ -273,4 +273,52 @@
     .neumorphic-login {
         width: 300px !important;
     }
+
+    .products-section {
+        padding: 240px 0 60px;
+    }
+
+    .products-section .grid {
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+        gap: 5rem;
+        padding-bottom: 0;
+    }
+
+    .products-section .product-card {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .section-hero-1,
+    .section-hero-2 {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .site-footer__content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 32px 0 24px;
+    }
+
+    .site-footer__brand {
+        text-align: center;
+    }
+
+    .site-footer__links {
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .site-footer__heading {
+        text-align: center;
+    }
+
+    .site-footer__bottom {
+        font-size: 0.8rem;
+        padding: 12px 0;
+    }
 }
